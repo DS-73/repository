@@ -1,3 +1,25 @@
+Metadata-Version: 2.4
+Name: suretyseven-underwriting
+Version: 0.1.0
+Summary: Small but production-minded surety bond application underwriting service (SuretySeven take-home).
+License: MIT
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+Requires-Dist: fastapi>=0.115
+Requires-Dist: uvicorn[standard]>=0.30
+Requires-Dist: sqlalchemy>=2.0
+Requires-Dist: pydantic>=2.7
+Requires-Dist: pydantic-settings>=2.3
+Requires-Dist: httpx>=0.27
+Requires-Dist: prometheus-client>=0.20
+Requires-Dist: psycopg[binary]>=3.1; platform_system != "Darwin" or python_version >= "3.11"
+Provides-Extra: dev
+Requires-Dist: pytest>=8; extra == "dev"
+Requires-Dist: pytest-cov>=5; extra == "dev"
+Requires-Dist: ruff>=0.6; extra == "dev"
+Requires-Dist: mypy>=1.10; extra == "dev"
+Requires-Dist: matplotlib>=3.8; extra == "dev"
+
 # Surety Bond Service
 
 A small, production-minded FastAPI service that takes a surety bond
@@ -12,19 +34,18 @@ Design notes and trade-offs live in [`docs/architecture.md`](docs/architecture.m
 ## Quickstart
 
 ```bash
-# Environment setup
 python -m venv .venv && source .venv/bin/activate
 pip install -e ".[dev]"
 
 cd src
+
 # Start Server
 uvicorn suretyseven.main:app --port 8000 
+
 # Browser
 http://localhost:8000/docs#/
 
 ```
-![](/docs/docs.png)
-
 
 ## Additonal - Optional
 ```bash
